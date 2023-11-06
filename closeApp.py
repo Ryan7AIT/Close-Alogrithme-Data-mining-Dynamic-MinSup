@@ -20,7 +20,7 @@ class MyWindow:
         self.lbl0=Label(win, text='Welcome to close algorithme ')
         self.lbl0.place(x=350, y=10)
         
-        self.lbl1=Label(win, text='The value of the minsup for ur problem will be:')
+        self.lbl1=Label(win, text='Auto Generated minsup :')
         self.lbl2=Label(win, text='import the data base') 
          
         self.t1=Entry()
@@ -48,7 +48,7 @@ class MyWindow:
         
 
         self.frame1 = LabelFrame(window, text="This is a LabelFrame containing a Treeview")
-        self.frame1.place(rely=0.4, relx=0.6, height=300, width=300)
+        self.frame1.place(rely=0.3, relx=0.6, height=500, width=300)
 
     def solve(self, event):
         pass
@@ -104,7 +104,7 @@ class MyWindow:
         
         minsup = math.exp(-0.4 * len(database) - 0.2) + 0.2
 
-
+        minsup = round(minsup,3)
         self.t1.insert(END, str(minsup))
 
         df = close(database,minsup)
